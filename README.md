@@ -13,11 +13,11 @@ To get started, follow these steps:
 
 1. __Clone the Repository__: Clone this repository to your local machine using the following command:
 ```bash
-git clone https://github.com/yourusername/your-repo.git
+git clone https://github.com/iammahesh123/spring-dockerization-demo.git
 ```
 2. __Navigate to the Project Directory__: Move into the cloned repository directory:
 ```bash
-cd your-repo
+cd spring-dockerization-demo
 ```
 3. __Build the Spring Boot Application__: Use Maven to build the Spring Boot application by running the following command:
 
