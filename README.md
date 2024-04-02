@@ -62,6 +62,14 @@ ENTRYPOINT ["java", "-jar", "spring-demo.jar"]
 - __COPY target/spring-demo.jar /app/spring-demo.jar__: Copies the compiled Spring Boot application JAR file into the Docker container.
 - __EXPOSE 8081__: Exposes port 8081 within the Docker container.
 - __ENTRYPOINT ["java", "-jar", "spring-demo.jar"]__: Defines the command to run when the Docker container starts, which executes the Spring Boot application JAR file.
+
+## Screenshots
+### Build the image
+![Build the docker image](https://github.com/iammahesh123/spring-dockerization-demo/blob/master/dockerbuild.png)
+### Docker Destop Dashboard
+![Docker](https://github.com/iammahesh123/spring-dockerization-demo/blob/master/Screenshot%202024-04-02%20122604.png)
+### Run the Image
+![Run](https://github.com/iammahesh123/spring-dockerization-demo/blob/master/Screenshot%202024-04-02%20124452.png)
 ## Contributing
 Contributions are welcome! Please feel free to fork the repository and submit pull requests.
 
