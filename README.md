@@ -11,58 +11,57 @@ Before you begin, ensure you have met the following requirements:
 ### Getting Started
 To get started, follow these steps:
 
-1. Clone the Repository: Clone this repository to your local machine using the following command:
+1. __Clone the Repository__: Clone this repository to your local machine using the following command:
 ```bash
 git clone https://github.com/yourusername/your-repo.git
 ```
-2. Navigate to the Project Directory: Move into the cloned repository directory:
+2. __Navigate to the Project Directory__: Move into the cloned repository directory:
 ```bash
 cd your-repo
 ```
-3. Build the Spring Boot Application: Use Maven to build the Spring Boot application by running the following command:
+3. __Build the Spring Boot Application__: Use Maven to build the Spring Boot application by running the following command:
 
 ``` bash
 ./mvnw clean package
 ```
-4. Build the Docker Image: Build a Docker image for the Spring Boot application using the provided Dockerfile:
+4. __Build the Docker Image__: Build a Docker image for the Spring Boot application using the provided Dockerfile:
 ``` bash
 docker build -t my-spring-app .
 ```
-5. Run the Docker Container: Launch a Docker container from the built Docker image:
+5. __Run the Docker Container__: Launch a Docker container from the built Docker image:
 
 ``` bash
 docker run -p 9090:8080 my-spring-app
 ```
-6.Access the Application: Open a web browser and navigate to http://localhost:8080 to access the running Spring Boot application.
+6.__Access the Application__: Open a web browser and navigate to `http://localhost:8081` to access the running Spring Boot application.
 
 ```bash
 http://localhost:9090
 ```
-Dockerfile
-Here's the Dockerfile used to build the Docker image:
 
 ## Dockerfile Explanation
+Here's the Dockerfile used to build the Docker image:
 ``` bash
 # Use a base image with Java installed
-FROM openjdk:11-jre-slim
+FROM openjdk:17-jdk-alpine
 
 # Set the working directory in the container
 WORKDIR /app
 
 # Copy the compiled Spring application JAR file into the container
-COPY target/demo-0.0.1-SNAPSHOT.jar /app/demo.jar
+COPY target/spring-demo.jar /app/spring-demo.jar
 
 # Expose the port your application runs on
-EXPOSE 8080
+EXPOSE 8081
 
 # Command to run your application
-CMD ["java", "-jar", "demo.jar"]
+ENTRYPOINT ["java", "-jar", "spring-demo.jar"]
 ```
-- FROM openjdk:11-jre-slim: Specifies the base Docker image containing OpenJDK 11.
-- WORKDIR /app: Sets the working directory within the Docker container to /app.
-- COPY target/demo-0.0.1-SNAPSHOT.jar /app/demo.jar: Copies the compiled Spring Boot application JAR file into the Docker container.
-- EXPOSE 8080: Exposes port 8080 within the Docker container.
-- CMD ["java", "-jar", "demo.jar"]: Defines the command to run when the Docker container starts, which executes the Spring Boot application JAR file.
+- __FROM openjdk:11-jre-slim__: Specifies the base Docker image containing OpenJDK 11.
+- __WORKDIR /app__: Sets the working directory within the Docker container to /app.
+- __COPY target/spring-demo.jar /app/spring-demo.jar__: Copies the compiled Spring Boot application JAR file into the Docker container.
+- __EXPOSE 8081__: Exposes port 8081 within the Docker container.
+- __ENTRYPOINT ["java", "-jar", "spring-demo.jar"]__: Defines the command to run when the Docker container starts, which executes the Spring Boot application JAR file.
 ## Contributing
 Contributions are welcome! Please feel free to fork the repository and submit pull requests.
 
@@ -70,4 +69,4 @@ Contributions are welcome! Please feel free to fork the repository and submit pu
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Acknowledgments
-Inspired by Spring Boot
+Inspired by __Spring Boot__
